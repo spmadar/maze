@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+html {
+    min-width: 1059px;
+    margin: 0;
+}
+
+#mazeBoard{
+    margin: 0 auto;
+    color: black;
+}
+
+.row{
+    display: flex;
+}
+.column {
+    min-width: 30px;
+    min-height: 30px;
+}
+.wall{
+    background-color: rosybrown;
+}
+.cell{
+    width: 30px;
+    height: 30px;
+}
+.start {
+    background-color: rgb(174, 63, 63)
+}
+.finish {
+    background-color:rgb(42, 232, 24);
+}
+#player {
+    background-color: yellow;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border: 1px dotted black;
+    border-radius: 20px;
+}
+
+h1 {
+    font-family: Nunito, sans-serif;
+    font: bolder;
+    font-size: 40px;
+    position: absolute;
+    top: 500px;
+}
