@@ -41,6 +41,7 @@ for (var r = 0; r < board.length; r++) {
                 finish.classList.add("finish","cell");
                 finish.id = id_str;
                 row.appendChild(finish);
+                finish.appendChild(document.getElementById("winMessage"));
                 break;
             case "W": // wall cell
                 var wall = document.createElement("div");
