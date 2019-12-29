@@ -1,15 +1,8 @@
 'use strict';
 const mazeBoard = document.getElementById("mazeBoard");
-//const player = document.getElementById("player");
 // current player position
-let posX = 0;
-let posY = 9;
-
-
-let prevId = "9.0"
-
-let boxLeft = 0;
-let boxTop = 0;
+let posX = 0; //this is the player column
+let posY = 9; // this is the player row
 
 const board = [
     "WWWWWWWWWWWWWWWWWWWWW",
@@ -62,12 +55,12 @@ for (var r = 0; r < board.length; r++) {
                 empty.classList.add("empty","cell","column");
                 empty.id = id_str;
                 row.appendChild(empty);    
-
         }
     }
     mazeBoard.appendChild(row);
     console.log("board dimensions " + board.length + " rows " + board[0].length + " columns ")
 }
+// initialize player location
 updatePlayer();
 
 document.addEventListener('keydown', playerMove);
@@ -79,32 +72,21 @@ function validatePos (x,y) {
         x >= 0 && 
         x < board[0].length &&
         board[y][x] !== "W"
-        )
+    )
 }
+
 function updatePlayer() {
+    // remove the player div from its current parent
     var curLoc = document.getElementById("player");
     curLoc.parentNode.removeChild(curLoc);
-    // currentPos = board[posY][posX]
+    // append player div to new player position
     var id_str = posY + "." + posX;
     var newDiv = document.getElementById(id_str);
-    console.log(newDiv);
-    newDiv.appendChild(curLoc);
-    
-    
+    newDiv.appendChild(curLoc); 
 }
-
-
-
-// function updatePlayer() {
-//     boxTop = 8 + posY * 30;
-//     boxLeft = 8 + posX * 30;
-//     document.getElementById("player").style.top = boxTop + "px";
-//     document.getElementById("player").style.left = boxLeft + "px";
-// }
 
 function playerMove(event) {
     console.log("got event: " + event.key);
-    prevId = posY + "." + posX;
     switch (event.keyCode) {
         case 40: // down arrow
             if (validatePos(posX, posY + 1)) {
@@ -135,8 +117,6 @@ function playerMove(event) {
     updatePlayer();
     // check for win
     if (board[posY][posX]== "F") {
-        // alert ("You win!");
-        // $('#winMessage').text('You win!');
         document.getElementById('winMessage').innerHTML = "Winner!";
     }
 }
