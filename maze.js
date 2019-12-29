@@ -1,3 +1,4 @@
+// by S. Madar
 'use strict';
 const mazeBoard = document.getElementById("mazeBoard");
 // current player position
@@ -34,25 +35,25 @@ for (var r = 0; r < board.length; r++) {
         switch (board[r][c]) {
             case "F": // finish cell
                 var finish = document.createElement("div");
-                finish.classList.add("finish","cell","column");
+                finish.classList.add("finish","cell");
                 finish.id = id_str;
                 row.appendChild(finish);
                 break;
             case "W": // wall cell
                 var wall = document.createElement("div");
-                wall.classList.add("wall","cell","column");
+                wall.classList.add("wall","cell");
                 wall.id = id_str;
                 row.appendChild(wall);
                 break;
             case "S": // starting cell
                 var start = document.createElement("div");
-                start.classList.add("start","cell","column");
+                start.classList.add("start","cell");
                 start.id = id_str;
                 row.appendChild(start);
                 break;
             case " ": // empty or "floor" cell
                 var empty = document.createElement("div");
-                empty.classList.add("empty","cell","column");
+                empty.classList.add("empty","cell");
                 empty.id = id_str;
                 row.appendChild(empty);    
         }
