@@ -68,7 +68,7 @@ for (var r = 0; r < board.length; r++) {
     mazeBoard.appendChild(row);
     console.log("board dimensions " + board.length + " rows " + board[0].length + " columns ")
 }
-placeBox();
+updatePlayer();
 
 document.addEventListener('keydown', playerMove);
 
@@ -81,7 +81,7 @@ function validatePos (x,y) {
         board[y][x] !== "W"
         )
 }
-function placeBox() {
+function updatePlayer() {
     var curLoc = document.getElementById("player");
     curLoc.parentNode.removeChild(curLoc);
     // currentPos = board[posY][posX]
@@ -95,7 +95,7 @@ function placeBox() {
 
 
 
-// function placeBox() {
+// function updatePlayer() {
 //     boxTop = 8 + posY * 30;
 //     boxLeft = 8 + posX * 30;
 //     document.getElementById("player").style.top = boxTop + "px";
@@ -132,7 +132,7 @@ function playerMove(event) {
     }
     console.log("current position " + posY + "," + posX);
     // update box position
-    placeBox();
+    updatePlayer();
     // check for win
     if (board[posY][posX]== "F") {
         // alert ("You win!");
