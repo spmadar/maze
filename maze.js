@@ -5,6 +5,9 @@ const mazeBoard = document.getElementById("mazeBoard");
 let posX = 0; //this is the player column
 let posY = 9; // this is the player row
 
+const moveSound = new Audio("img/pacmansound.wav");
+const winSound = new Audio("img/levelclear.wav");
+
 const board = [
     "WWWWWWWWWWWWWWWWWWWWW",
     "W   W     W     W W W",
@@ -83,7 +86,8 @@ function updatePlayer() {
     // append player div to new player position
     var id_str = posY + "." + posX;
     var newDiv = document.getElementById(id_str);
-    newDiv.appendChild(curLoc); 
+    newDiv.appendChild(curLoc);
+    moveSound.play();
 }
 
 function playerMove(event) {
@@ -119,6 +123,7 @@ function playerMove(event) {
     // check for win
     if (board[posY][posX]== "F") {
         document.getElementById('winMessage').innerHTML = "Winner!";
+        winSound.play();
     }
 }
 

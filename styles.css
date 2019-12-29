@@ -15,7 +15,7 @@ html, body
     justify-content: c;
     position: absolute;
     right: 20%;
-    left: 20%;
+    left: 21%;
     top: 10%;
 } 
 
@@ -25,38 +25,40 @@ html, body
 }
 
 .wall {
-    background-color: rosybrown;
+    background-image: url("img/brickwall.jpg");
+    background-size: 30px;
+    
 }
 .cell, .player#player, .wall {
     width: 30px;
     height: 30px;
 }
-.start {
-    background-color: rgb(174, 63, 63)
-}
-.finish {
-    background-color:rgb(42, 232, 24);
-}
+
 
 .player {
-    background-color: black;
+    
     position: absolute;
-    border-radius: 20px;
+    
 }
 
 h1 {
     font-family: Nunito, sans-serif;
     font-size: 40px;
     position: absolute;
-    left: 20%;
+    left: 38%;
     right: 20%;
     top: 10px;
-    margin: 0 auto;
-    white-space: normal;
+    margin: 0;
+    max-width: 270px;
 }
 
 #winMessage {
-    font: Nunito, sans-serif;
-    font-size: 60px;
+    font-family: Nunito, sans-serif;
+    font-size: 20px;
+    color: green;
+    font-weight: bold;
+    position: absolute;
+    left: 75%;
+    top: 52%;
     
 }
