@@ -5,8 +5,9 @@ html {
 }
 
 #mazeBoard{
-    margin: 0 auto;
-    color: black;
+    /* margin: 20 auto;
+    padding: 20px;
+    justify-content: center; */
 }
 
 .row{
@@ -29,7 +30,8 @@ html {
 .finish {
     background-color:rgb(42, 232, 24);
 }
-#player {
+
+.player {
     background-color: yellow;
     width: 30px;
     height: 30px;
@@ -44,4 +46,10 @@ h1 {
     font-size: 40px;
     position: absolute;
     top: 500px;
+}
+
+#winMessage {
+    font: Nunito, sans-serif;
+    font-size: 60px;
+    
 }
